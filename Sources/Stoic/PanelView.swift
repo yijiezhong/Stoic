@@ -19,6 +19,15 @@ struct PanelView: View {
     }
 
     var body: some View {
+        TimelineView(.periodic(from: .now, by: 0.5)) { _ in
+            content
+        }
+        .frame(width: 300)
+        .onAppear { refreshToday() }
+        .onChange(of: model.segmentNumber) { _, _ in refreshToday() }
+    }
+
+    private var content: some View {
         VStack(spacing: 10) {
             header
             ring
@@ -29,9 +38,6 @@ struct PanelView: View {
         .foregroundStyle(Color.black)
         .padding(.horizontal, 16)
         .padding(.vertical, 14)
-        .frame(width: 300)
-        .onAppear { refreshToday() }
-        .onChange(of: model.segmentNumber) { _, _ in refreshToday() }
     }
 
     private var header: some View {
