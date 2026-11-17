@@ -17,6 +17,7 @@ struct SettingsWindowView: View {
     @State private var alignToClock = true
     @State private var showInMenuBar = true
     @AppStorage("stoic.launchAtLogin") private var launchAtLogin = true
+    @AppStorage("stoic.restOverlay") private var restOverlay = true
     @State private var blockingMode = "off"
     @State private var blockedText = ""
     @AppStorage("stoic.telemetry.enabled") private var telemetryEnabled = false
@@ -89,6 +90,9 @@ struct SettingsWindowView: View {
     private var intervalsTab: some View {
         Form {
             Section(L10n.t("settings.tab.intervals")) {
+                Toggle(L10n.t("settings.restOverlay"), isOn: $restOverlay)
+                Text(L10n.t("settings.restOverlayHint"))
+                    .foregroundStyle(.black)
                 Stepper(L10n.format("settings.work", workMinutes), value: $workMinutes, in: 1...180)
                 Stepper(L10n.format("settings.shortRest", shortRestMinutes), value: $shortRestMinutes, in: 1...60)
                 Stepper(L10n.format("settings.longRest", longRestMinutes), value: $longRestMinutes, in: 1...120)

@@ -201,3 +201,8 @@
 "settings.alignToClockHint" = "开始第一个番茄时按当前时间计算工作时长，让「工作 + 休息」正好在整点或半点结束，保证下一个番茄整点开始；长休息后同样重新对齐。";
 
 "settings.launchAtLogin" = "开机时自动启动";
+
+"overlay.startWork" = "开始工作";
+"overlay.keepResting" = "继续休息";
+"settings.restOverlay" = "休息时显示全屏倒计时";
+"settings.restOverlayHint" = "会议中、演示中、微信交流时不弹出。";

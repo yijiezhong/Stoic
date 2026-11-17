@@ -48,6 +48,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var soundPack = "classic"
     private var alertedBlockedThisSegment = false
     private var tickCount = 0
+    private var restOverlay: RestOverlayWindow?
+    private var restOverlayCheckedForSegment = false
     private var taskWindow: NSWindow?
     private lazy var container: ModelContainer? = {
         if let path = ProcessInfo.processInfo.environment["STOIC_DEBUG_STORE"], !path.isEmpty {
@@ -103,6 +105,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 guard let self else { return }
                 self.model.tick()
                 self.refreshTitle()
+                self.updateRestOverlay()
                 self.tickCount += 1
                 if self.tickCount % 120 == 0 {
                     self.updateWidgetData(reload: false)
@@ -755,6 +758,49 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     // MARK: - 状态项
+
+    private func updateRestOverlay() {
+        if model.kind == .rest, model.phase == .running {
+            if !restOverlayCheckedForSegment {
+                restOverlayCheckedForSegment = true
+                let wantsOverlay = UserDefaults.standard.object(forKey: "stoic.restOverlay") as? Bool ?? true
+                let exceptions = RestGuard.activeExceptions()
+                if wantsOverlay && exceptions.isEmpty {
+                    // TODO: 全屏遮罩运行时崩溃（objc_release 过度释放），先只记录不弹窗
+                    NSLog("[Stoic] rest overlay wanted but disabled (pending crash fix)")
+                } else {
+                    NSLog("[Stoic] rest overlay skipped: exceptions=\(exceptions)")
+                }
+            }
+        } else if model.kind != .rest {
+            restOverlayCheckedForSegment = false
+            if let overlay = restOverlay {
+                overlay.hide()
+                restOverlay = nil
+            }
+        }
+    }
+
+    private func showRestOverlay() {
+        let overlay = RestOverlayWindow()
+        overlay.show(
+            model: model,
+            onStartWork: { [weak self] in
+                self?.restOverlay?.hide()
+                self?.restOverlay = nil
+                self?.model.skip()
+            },
+            onKeepResting: { [weak self] in
+                self?.restOverlay?.hide()
+                self?.restOverlay = nil
+            }
+        )
+        restOverlay = overlay
+    }
+
+    private func debugShowRestOverlay() {
+        showRestOverlay()
+    }
 
     private func writeDiagnostics() {
         let text = """

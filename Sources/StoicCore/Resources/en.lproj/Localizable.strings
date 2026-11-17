@@ -201,3 +201,8 @@
 "settings.alignToClockHint" = "Sizes the first work segment so work plus break ends on the next hour or half hour; realigns again after a long break.";
 
 "settings.launchAtLogin" = "Launch at login";
+
+"overlay.startWork" = "Start working";
+"overlay.keepResting" = "Keep resting";
+"settings.restOverlay" = "Show full-screen countdown during breaks";
+"settings.restOverlayHint" = "Skipped during meetings, presentations, and WeChat conversations.";
