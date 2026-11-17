@@ -2,12 +2,21 @@
 
 会复盘的番茄钟（macOS 菜单栏应用）。
 
+![面板](<docs/screenshot-panel.png>)
+
+- 菜单栏常驻，不占 Dock
+- 整点对齐：让每个番茄都在整点或半点开始
+- 休息时全屏倒计时（会议 / 演示 / 微信时自动跳过）
+- 任务、记录、周复盘，数据只存本机
+- 11 个快捷指令动作、Widget、专注模式过滤
+- Chrome 扩展可屏蔽分心网站
+
 ## 快速开始
 
 ```bash
 xcodegen generate          # 生成 Stoic.xcodeproj（project.yml 变更后需要）
 ./scripts/build-app.sh      # xcodebuild 构建 → .local-build/Stoic.app → 自动安装到 /Applications/Stoic.app
-./scripts/smoke.sh          # 构建 + 53 个单元测试 + 启动检查
+./scripts/smoke.sh          # 构建 + 58 个单元测试 + 启动检查
 ./scripts/make-dmg.sh       # 生成 .dist/Stoic-<版本>.dmg（点开头，不进 Spotlight）
 swift test                  # 只跑测试（StoicCore 仍是纯 SPM 包）
 ```
@@ -23,7 +32,7 @@ swift test                  # 只跑测试（StoicCore 仍是纯 SPM 包）
 ```
 Sources/StoicCore/     状态机、数据模型、导入、导出、复盘、遥测（可测试）
 Sources/Stoic/         AppKit 壳：菜单栏、面板、任务窗口、诊断
-Tests/StoicCoreTests/  53 个单元测试
+Tests/StoicCoreTests/  58 个单元测试
 scripts/               build-app / smoke / make-dmg / symbolicate
 docs/                  调研报告、Backlog、隐私政策、发布流程、官网页
 extension/             Chrome MV3 扩展骨架（手动配置站点）
