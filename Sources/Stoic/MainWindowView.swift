@@ -1,16 +1,21 @@
 import SwiftUI
 import StoicCore
 
+private struct MainTab: Identifiable {
+    let id: String
+    let title: String
+}
+
 struct MainWindowView: View {
     @State private var selection: String = {
         ProcessInfo.processInfo.environment["STOIC_DEBUG_TAB"] ?? "tasks"
     }()
 
-    private var tabs: [(id: String, title: String)] {
+    private var tabs: [MainTab] {
         [
-            ("tasks", L10n.t("main.tab.tasks")),
-            ("intervals", L10n.t("main.tab.records")),
-            ("review", L10n.t("main.tab.review")),
+            MainTab(id: "tasks", title: L10n.t("main.tab.tasks")),
+            MainTab(id: "intervals", title: L10n.t("main.tab.records")),
+            MainTab(id: "review", title: L10n.t("main.tab.review")),
         ]
     }
 
@@ -44,6 +49,7 @@ struct MainWindowView: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .focusable(false)
             }
             Spacer()
         }

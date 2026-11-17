@@ -90,6 +90,7 @@ struct TaskListView: View {
             .buttonStyle(.plain)
 
             Text(task.title)
+                .font(.system(size: 16))
                 .strikethrough(task.completedAt != nil)
                 .foregroundStyle(task.completedAt != nil ? .secondary : .primary)
                 .lineLimit(1)
@@ -105,6 +106,7 @@ struct TaskListView: View {
             let done = task.intervals.filter { !$0.isRest && $0.completionState == 3 }.count
             if done > 0 {
                 Text("\(done)")
+                    .font(.system(size: 16))
                     .font(.system(size: 16).monospacedDigit())
                     .foregroundStyle(Color.black)
             }
