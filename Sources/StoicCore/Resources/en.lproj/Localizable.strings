@@ -208,3 +208,5 @@
 "settings.restOverlayHint" = "Skipped during meetings, presentations, and WeChat conversations.";
 
 "editor.task" = "Task";
+
+"records.rest" = "Break";

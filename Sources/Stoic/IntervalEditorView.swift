@@ -26,10 +26,15 @@ struct IntervalEditorView: View {
                     displayedComponents: [.date, .hourAndMinute]
                 )
                 Stepper(L10n.format("editor.duration", minutes), value: $minutes, in: 1...180)
-                Picker(L10n.t("editor.task"), selection: $selectedTaskID) {
-                    Text(L10n.t("records.untitledTask")).tag(UUID?.none)
-                    ForEach(allTasks) { task in
-                        Text(task.title).tag(Optional(task.id))
+                if interval.isRest {
+                    Text(L10n.t("records.rest"))
+                        .foregroundStyle(Color.black)
+                } else {
+                    Picker(L10n.t("editor.task"), selection: $selectedTaskID) {
+                        Text(L10n.t("records.untitledTask")).tag(UUID?.none)
+                        ForEach(allTasks) { task in
+                            Text(task.title).tag(Optional(task.id))
+                        }
                     }
                 }
                 Picker(L10n.t("editor.state"), selection: $completionState) {

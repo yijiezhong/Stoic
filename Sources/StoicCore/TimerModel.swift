@@ -317,8 +317,8 @@ public final class TimerModel {
             kind: finishedKind,
             startedAt: startedWall,
             duration: duration,
-            taskID: currentTaskID,
-            taskTitle: currentTaskTitle,
+            taskID: finishedKind == .work ? currentTaskID : nil,
+            taskTitle: finishedKind == .work ? currentTaskTitle : nil,
             interruptionCount: interruptions,
             interruptionReasons: interruptionReasonCodes.joined(separator: ","),
             mode: workingMode.rawValue

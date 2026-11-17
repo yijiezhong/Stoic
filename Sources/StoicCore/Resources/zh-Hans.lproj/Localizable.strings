@@ -208,3 +208,5 @@
 "settings.restOverlayHint" = "会议中、演示中、微信交流时不弹出。";
 
 "editor.task" = "关联任务";
+
+"records.rest" = "休息";

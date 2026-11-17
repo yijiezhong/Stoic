@@ -126,19 +126,25 @@ struct IntervalListView: View {
                 .foregroundStyle(interval.isRest ? Color.green : Color.orange)
                 .font(.system(size: 16))
 
-            Menu {
-                Button(L10n.t("records.untitledTask")) { assign(interval, task: nil) }
-                Divider()
-                ForEach(allTasks) { task in
-                    Button(task.title) { assign(interval, task: task) }
-                }
-            } label: {
-                Text(interval.task?.title ?? L10n.t("records.untitledTask"))
+            if interval.isRest {
+                Text(L10n.t("records.rest"))
                     .lineLimit(1)
                     .foregroundStyle(Color.black)
+            } else {
+                Menu {
+                    Button(L10n.t("records.untitledTask")) { assign(interval, task: nil) }
+                    Divider()
+                    ForEach(allTasks) { task in
+                        Button(task.title) { assign(interval, task: task) }
+                    }
+                } label: {
+                    Text(interval.task?.title ?? L10n.t("records.untitledTask"))
+                        .lineLimit(1)
+                        .foregroundStyle(Color.black)
+                }
+                .menuStyle(.borderlessButton)
+                .fixedSize()
             }
-            .menuStyle(.borderlessButton)
-            .fixedSize()
 
             Spacer()
 
