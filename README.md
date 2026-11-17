@@ -1,6 +1,6 @@
 # 知止 Stoic
 
-会复盘的番茄钟（macOS 菜单栏应用）。
+番茄工作法的计时工具，知所先后，止于至善。
 
 ![面板](<assets/screenshot-panel.png>)
 
