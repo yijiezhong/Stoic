@@ -46,7 +46,7 @@ struct PanelView: View {
         HStack(spacing: 8) {
             Button(action: completeCurrentTask) {
                 Image(systemName: taskLabel == L10n.t("panel.noTask") ? "circle" : "checkmark.circle")
-                    .font(.system(size: 17))
+                    .font(.system(size: 16))
                     .foregroundStyle(taskLabel == L10n.t("panel.noTask") ? Color.secondary.opacity(0.5) : accent)
             }
             .buttonStyle(.plain)
@@ -72,7 +72,7 @@ struct PanelView: View {
                         .lineLimit(1)
                         .truncationMode(.tail)
                     Image(systemName: "chevron.up.chevron.down")
-                        .font(.system(size: 9, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                 }
             }
             .menuStyle(.borderlessButton)
@@ -96,7 +96,7 @@ struct PanelView: View {
                 }
             } label: {
                 Image(systemName: "ellipsis")
-                    .font(.system(size: 15))
+                    .font(.system(size: 16))
                     .foregroundStyle(Color.black)
                     .frame(width: 20, height: 20)
             }
@@ -122,7 +122,7 @@ struct PanelView: View {
                     .foregroundStyle(Color.black)
                 Button { model.toggle() } label: {
                     Image(systemName: model.phase == .running ? "pause.fill" : "play.fill")
-                        .font(.system(size: 18))
+                        .font(.system(size: 16))
                         .foregroundStyle(accent)
                         .frame(width: 42, height: 42)
                         .overlay(Circle().stroke(accent.opacity(0.3), lineWidth: 1))
@@ -148,7 +148,7 @@ struct PanelView: View {
             Button {
                 NotificationCenter.default.post(name: .stoicOpenTaskList, object: nil)
             } label: {
-                Image(systemName: "list.bullet").font(.system(size: 13))
+                Image(systemName: "list.bullet").font(.system(size: 16))
             }
             .buttonStyle(.plain)
             .focusEffectDisabled()
@@ -180,7 +180,7 @@ struct PanelView: View {
                     NSApplication.shared.terminate(nil)
                 }
             } label: {
-                Image(systemName: "gearshape").font(.system(size: 13))
+                Image(systemName: "gearshape").font(.system(size: 16))
             }
             .menuStyle(.borderlessButton)
             .menuIndicator(.hidden)

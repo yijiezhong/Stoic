@@ -128,6 +128,7 @@ struct IntervalListView: View {
 
             if interval.isRest {
                 Text(L10n.t("records.rest"))
+                    .font(.system(size: 16))
                     .lineLimit(1)
                     .foregroundStyle(Color.black)
             } else {
@@ -139,6 +140,7 @@ struct IntervalListView: View {
                     }
                 } label: {
                     Text(interval.task?.title ?? L10n.t("records.untitledTask"))
+                        .font(.system(size: 16))
                         .lineLimit(1)
                         .foregroundStyle(Color.black)
                 }
