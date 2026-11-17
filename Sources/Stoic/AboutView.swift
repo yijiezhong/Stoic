@@ -37,11 +37,9 @@ struct AboutView: View {
 
             VStack(spacing: 12) {
                 row("版本", "\(version) (\(build))")
-                row("数据", "仅本地")
-                row("系统", "macOS 14+")
             }
 
-            Link(destination: URL(string: "https://github.com/")!) {
+            Link(destination: URL(string: "https://www.yijiezhong.com")!) {
                 Text("项目主页")
                     .font(font(16))
                     .underline()

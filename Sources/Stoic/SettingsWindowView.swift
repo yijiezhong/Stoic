@@ -25,17 +25,22 @@ struct SettingsWindowView: View {
     @AppStorage("stoic.updateFeedURL") private var updateFeedURL = ""
     @State private var saved = false
     @State private var runningApps: [(name: String, id: String)] = []
+    @State private var selectedTab = "general"
+
+    private let tabKeys: [(id: String, key: String)] = [
+        ("general", "settings.tab.general"),
+        ("intervals", "settings.tab.intervals"),
+        ("notifications", "settings.tab.notifications"),
+        ("blocking", "settings.tab.blocking"),
+        ("data", "settings.tab.data"),
+    ]
 
     var body: some View {
         VStack(spacing: 0) {
-            TabView {
-                generalTab.tabItem { Label(L10n.t("settings.tab.general"), systemImage: "gearshape") }
-                intervalsTab.tabItem { Label(L10n.t("settings.tab.intervals"), systemImage: "timer") }
-                notificationsTab.tabItem { Label(L10n.t("settings.tab.notifications"), systemImage: "bell") }
-                blockingTab.tabItem { Label(L10n.t("settings.tab.blocking"), systemImage: "hand.raised") }
-                dataTab.tabItem { Label(L10n.t("settings.tab.data"), systemImage: "externaldrive") }
-            }
-            .padding(14)
+            tabBar
+            Divider()
+            settingsContent
+                .padding(14)
 
             Divider()
             HStack {
@@ -64,6 +69,41 @@ struct SettingsWindowView: View {
         }
     }
 
+    private var tabBar: some View {
+        HStack(spacing: 6) {
+            ForEach(tabKeys, id: \.id) { tab in
+                Button { selectedTab = tab.id } label: {
+                    Text(L10n.t(tab.key))
+                        .font(.system(size: 24, weight: selectedTab == tab.id ? .semibold : .regular))
+                        .foregroundStyle(Color.black)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 5)
+                        .background(
+                            selectedTab == tab.id ? Color.black.opacity(0.07) : Color.clear,
+                            in: RoundedRectangle(cornerRadius: 8)
+                        )
+                }
+                .buttonStyle(.plain)
+                .focusable(false)
+            }
+            Spacer()
+        }
+        .padding(.horizontal, 14)
+        .padding(.top, 10)
+        .padding(.bottom, 6)
+    }
+
+    @ViewBuilder
+    private var settingsContent: some View {
+        switch selectedTab {
+        case "intervals": intervalsTab
+        case "notifications": notificationsTab
+        case "blocking": blockingTab
+        case "data": dataTab
+        default: generalTab
+        }
+    }
+
     private var generalTab: some View {
         Form {
             Section(L10n.t("settings.section.appearance")) {
@@ -73,15 +113,6 @@ struct SettingsWindowView: View {
                     }
                 Toggle(L10n.t("settings.showInMenuBar"), isOn: $showInMenuBar)
                 Toggle(L10n.t("settings.autoStart"), isOn: $autoStartNext)
-            }
-            Section(L10n.t("settings.section.updates")) {
-                TextField(L10n.t("settings.updateFeed"), text: $updateFeedURL)
-            }
-            Section(L10n.t("settings.privacy")) {
-                Toggle(L10n.t("settings.telemetry"), isOn: $telemetryEnabled)
-                Text(L10n.t("settings.telemetryHint"))
-                    .font(.system(size: 16))
-                    .foregroundStyle(Color.black)
             }
         }
         .formStyle(.grouped)
