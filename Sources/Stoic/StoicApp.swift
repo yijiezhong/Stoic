@@ -766,8 +766,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 let wantsOverlay = UserDefaults.standard.object(forKey: "stoic.restOverlay") as? Bool ?? true
                 let exceptions = RestGuard.activeExceptions()
                 if wantsOverlay && exceptions.isEmpty {
-                    // TODO: 全屏遮罩运行时崩溃（objc_release 过度释放），先只记录不弹窗
-                    NSLog("[Stoic] rest overlay wanted but disabled (pending crash fix)")
+                    showRestOverlay()
                 } else {
                     NSLog("[Stoic] rest overlay skipped: exceptions=\(exceptions)")
                 }
