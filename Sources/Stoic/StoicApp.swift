@@ -743,18 +743,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         guard !wasClean else { return }
         guard model.phase == .running || model.phase == .paused else { return }
-        if ProcessInfo.processInfo.environment["STOIC_SKIP_RESTORE_PROMPT"] == "1" { return }
-
-        let alert = NSAlert()
-        alert.messageText = L10n.t("quit.title")
-        alert.informativeText = L10n.t("quit.message")
-        alert.addButton(withTitle: L10n.t("quit.continue"))
-        alert.addButton(withTitle: L10n.t("quit.discard"))
-        alert.alertStyle = .warning
-        if alert.runModal() == .alertSecondButtonReturn {
-            model.discardRestoredState()
-            refreshTitle()
-        }
+        // 异常退出后默认继续上次计时，不再弹窗询问。
+        refreshTitle()
+        writeDiagnostics()
     }
 
     // MARK: - 状态项
