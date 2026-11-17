@@ -1,0 +1,21 @@
+# 构建产物（按全局规则用点开头目录）
+.local-build/
+.dist/
+.build/
+.hidden-apps/
+
+# Xcode / SPM
+.swiftpm/
+xcuserdata/
+*.xcodeproj/
+
+# 系统与本地数据
+.DS_Store
+*.store
+*.store-wal
+*.store-shm
+
+# 密钥与证书
+*.pem
+*.p12
+*.cer

@@ -1,0 +1,201 @@
+"panel.start" = "开始";
+"panel.pause" = "暂停";
+"panel.skip" = "跳过";
+"panel.pickTask" = "选择任务";
+"panel.taskList" = "任务列表";
+"panel.noTask" = "未选择任务";
+"panel.segment.work" = "工作";
+"panel.segment.shortRest" = "短休";
+"panel.segment.longRest" = "长休";
+"panel.segmentLabel" = "第 %1$d/%2$d 段 · 知止";
+"menu.start" = "开始";
+"menu.pause" = "暂停";
+"menu.skip" = "跳过";
+"menu.tasks" = "任务列表…";
+"menu.open" = "打开面板";
+"menu.quit" = "退出知止";
+"tasks.title" = "知止 · 任务";
+"tasks.search" = "搜索任务";
+"tasks.showCompleted" = "显示已完成";
+"tasks.new" = "新建";
+"tasks.empty" = "还没有任务";
+"tasks.emptyHint" = "点右上角「新建」，或从 Be Focused 导入";
+"tasks.footer" = "共 %1$d 个 · 已完成 %2$d 个";
+"tasks.newHint" = "提示：⌘N 新建";
+"tasks.edit" = "编辑…";
+"tasks.markDone" = "标记完成";
+"tasks.markUndone" = "标记未完成";
+"tasks.delete" = "删除";
+"records.completed" = "完成番茄";
+"records.focus" = "专注时长";
+"records.count" = "记录条数";
+"records.empty" = "今天还没有记录";
+"records.emptyHint" = "完成一个番茄后会出现在这里";
+"records.editHint" = "提示：点按一行可编辑时长与开始时间";
+"records.edit" = "编辑…";
+"records.minutes" = "%d 分钟";
+"records.hoursMinutes" = "%1$d 小时 %2$d 分";
+"records.skipped" = "跳过";
+"records.untitledTask" = "未关联任务";
+"detail.title" = "标题";
+"detail.note" = "备注";
+"detail.important" = "重要";
+"detail.urgent" = "紧急";
+"detail.expected" = "预计番茄：%d";
+"detail.expectedUnset" = "预计番茄：未设置";
+"detail.hasDue" = "有截止日";
+"detail.dueDate" = "截止日";
+"detail.cancel" = "取消";
+"detail.save" = "保存";
+"detail.emptyTitle" = "标题不能为空";
+"settings.timing" = "计时";
+"settings.work" = "工作段：%d 分钟";
+"settings.shortRest" = "短休：%d 分钟";
+"settings.longRest" = "长休：%d 分钟";
+"settings.segments" = "每轮段数：%d";
+"settings.autoStart" = "自动开始下一段";
+"settings.reminder" = "提醒";
+"settings.sound" = "段落结束播放提示音";
+"settings.soundHint" = "通知权限在首次点击「开始」时请求；被拒绝时只播放提示音。";
+"settings.sync" = "提醒事项同步";
+"settings.syncState" = "状态：%@";
+"settings.syncNow" = "立即同步";
+"settings.syncHint" = "未授权时同步降级为纯本地，任务不会丢失。";
+"settings.menuBar" = "菜单栏";
+"settings.showInMenuBar" = "在菜单栏显示剩余时间";
+"settings.restoreDefaults" = "恢复默认";
+"settings.save" = "保存";
+"settings.saved" = "已保存";
+"onboarding.title" = "三步开始";
+"onboarding.step1" = "① 选一个任务";
+"onboarding.step2" = "② 点「开始」";
+"onboarding.step3" = "③ 25 分钟后自动进入休息";
+"onboarding.dismiss" = "知道了";
+
+"main.tab.tasks" = "任务";
+"main.tab.records" = "记录";
+"main.tab.settings" = "设置";
+"detail.section.basic" = "基本信息";
+"detail.section.status" = "状态";
+"detail.section.time" = "时间";
+"editor.start" = "开始时间";
+"editor.duration" = "时长：%d 分钟";
+"editor.state" = "状态";
+"editor.complete" = "完成";
+"editor.skipped" = "跳过";
+"editor.overlap" = "这段时间与已有记录重叠。确认无误再点一次「保存」。";
+"editor.save" = "保存";
+"editor.cancel" = "取消";
+
+"panel.segmentLine" = "第 %1$d/%2$d 段 · 知止";
+"settings.syncing" = "同步中…";
+"settings.syncResult" = "导出 %1$d · 更新 %2$d · 导入 %3$d";
+"quit.title" = "上次退出时计时仍在进行";
+"quit.message" = "要继续上次的计时，还是作废并重新开始？";
+"quit.continue" = "继续";
+"quit.discard" = "作废";
+"notify.workEnd" = "工作段结束";
+"notify.restEnd" = "休息结束";
+"notify.workBody" = "起来走走，喝口水";
+"notify.restBody" = "回来继续下一段";
+"tasks.newTitle" = "新任务";
+
+"panel.interrupted" = "被打断 %d";
+"records.interruptions" = "被打断";
+
+"records.streak" = "连续天数";
+
+"panel.reason.distraction" = "打扰";
+"panel.reason.taskSwitch" = "切任务";
+"panel.reason.rest" = "主动休息";
+"records.interruptionsBreakdown" = "打扰 %1$d · 切任务 %2$d · 主动休息 %3$d";
+
+"main.tab.review" = "复盘";
+"review.focus" = "本周专注";
+"review.pomodoros" = "番茄数";
+"review.activeDays" = "活跃天数";
+"review.interruptions" = "被打断";
+"review.peakHour" = "高峰时段";
+"review.topTasks" = "主要任务";
+"review.change" = "与上周相比";
+"review.empty" = "本周还没有记录";
+"review.emptyHint" = "完成几个番茄后再来看复盘";
+"review.source" = "来自 %d 条记录";
+"review.peakFormat" = "%d:00–%d:00";
+"review.flat" = "持平";
+"review.up" = "↑ %d%%";
+"review.down" = "↓ %d%%";
+
+"mode.pomodoro" = "番茄 25";
+"mode.focus50" = "专注 50";
+"mode.focus90" = "专注 90";
+"records.focusBlocks" = "专注块";
+
+"review.daily" = "本周每日专注（分钟）";
+
+"settings.data" = "数据";
+"settings.exportJSON" = "导出 JSON";
+"settings.exportCSV" = "导出 CSV";
+"settings.dataHint" = "JSON 含任务、记录与设置，可完整重建；CSV 仅含记录明细。";
+
+"settings.blocking" = "专注屏蔽";
+"settings.blockedApps" = "黑名单（逗号分隔 bundle id）";
+"settings.addRunningApp" = "添加运行中的应用";
+"settings.blockingHint" = "计时期间切到黑名单应用会提醒一次，不强制退出。";
+"notify.blockedTitle" = "专注提醒";
+"notify.blockedBody" = "%@ 在屏蔽名单里，回到计时吧";
+
+"settings.blockingMode" = "屏蔽模式";
+"mode.blocking.off" = "关闭";
+"mode.blocking.blacklist" = "黑名单（只拦列表内）";
+"mode.blocking.whitelist" = "白名单（只允许列表内）";
+"settings.allowedApps" = "白名单（逗号分隔 bundle id）";
+"notify.whitelistTitle" = "专注提醒";
+"notify.whitelistBody" = "%@ 不在你的专注白名单里";
+
+"settings.about" = "关于";
+"settings.version" = "版本";
+"settings.sponsorURL" = "赞助链接（爱发电 / BMAC）";
+"settings.support" = "打开赞助页";
+"settings.supportHint" = "填你自己的赞助页地址；为空时按钮禁用。";
+
+"settings.updateFeed" = "更新清单地址（JSON）";
+"settings.checkUpdates" = "检查更新";
+"settings.updateAvailable" = "发现新版本 %@，已打开下载页";
+"settings.upToDate" = "已是最新版本";
+"settings.updateFailed" = "检查失败，请稍后再试";
+"settings.updateHint" = "轻量更新：只检查版本并打开下载页，不自动替换应用。";
+
+"settings.privacy" = "隐私";
+"settings.telemetry" = "匿名使用统计（默认关闭）";
+"settings.telemetryHint" = "只累计「启动次数 / 完成番茄数」这类计数，不含任务名、备注与任何标识符；关闭时不记录、不上报。";
+
+"panel.completeTask" = "完成当前任务";
+"panel.segmentDetail" = "%1$@ · 第 %2$d/%3$d 段";
+"panel.today" = "今日 %1$d/%2$d";
+"panel.settings" = "设置";
+
+"onboarding.hint" = "选任务，按播放开始";
+
+"menu.reports" = "报告";
+"menu.exportCSV" = "导出 CSV";
+"menu.settings" = "设置…";
+"menu.about" = "关于知止";
+"settings.tab.general" = "通用";
+"settings.tab.intervals" = "计时";
+"settings.tab.notifications" = "通知与声音";
+"settings.tab.blocking" = "屏蔽";
+"settings.tab.data" = "数据";
+"settings.section.appearance" = "常规";
+"settings.section.updates" = "更新";
+
+"settings.alignToClock" = "对齐到整点/半点";
+
+"panel.newTask" = "新建任务…";
+
+"settings.soundPack" = "段落结束提示音";
+"sound.classic" = "木鱼 + 佛铃童声";
+"sound.soft" = "轻提示";
+"sound.system" = "系统提示音";
+"sound.off" = "关闭";
+"settings.alignToClockHint" = "开始第一个番茄时按当前时间计算工作时长，让「工作 + 休息」正好在整点或半点结束，保证下一个番茄整点开始；长休息后同样重新对齐。";

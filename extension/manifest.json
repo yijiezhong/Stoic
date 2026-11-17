@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "知止 Stoic 专注屏蔽",
+  "version": "0.1.0",
+  "description": "专注计时期间拦截黑名单站点。首版需手动配置，未与主应用联动。",
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "alarms",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

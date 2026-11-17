@@ -1,0 +1,201 @@
+"panel.start" = "Start";
+"panel.pause" = "Pause";
+"panel.skip" = "Skip";
+"panel.pickTask" = "Pick Task";
+"panel.taskList" = "Task List";
+"panel.noTask" = "No task selected";
+"panel.segment.work" = "Work";
+"panel.segment.shortRest" = "Short Break";
+"panel.segment.longRest" = "Long Break";
+"panel.segmentLabel" = "Segment %1$d/%2$d · Stoic";
+"menu.start" = "Start";
+"menu.pause" = "Pause";
+"menu.skip" = "Skip";
+"menu.tasks" = "Task List…";
+"menu.open" = "Open Panel";
+"menu.quit" = "Quit Stoic";
+"tasks.title" = "Stoic · Tasks";
+"tasks.search" = "Search tasks";
+"tasks.showCompleted" = "Show completed";
+"tasks.new" = "New";
+"tasks.empty" = "No tasks yet";
+"tasks.emptyHint" = "Use New, or import from Be Focused";
+"tasks.footer" = "%1$d total · %2$d done";
+"tasks.newHint" = "Tip: ⌘N to create";
+"tasks.edit" = "Edit…";
+"tasks.markDone" = "Mark Done";
+"tasks.markUndone" = "Mark Undone";
+"tasks.delete" = "Delete";
+"records.completed" = "Pomodoros";
+"records.focus" = "Focus Time";
+"records.count" = "Records";
+"records.empty" = "No records today";
+"records.emptyHint" = "Finish a pomodoro and it appears here";
+"records.editHint" = "Tap a row to edit duration and start time";
+"records.edit" = "Edit…";
+"records.minutes" = "%d min";
+"records.hoursMinutes" = "%1$d h %2$d min";
+"records.skipped" = "Skipped";
+"records.untitledTask" = "No task";
+"detail.title" = "Title";
+"detail.note" = "Note";
+"detail.important" = "Important";
+"detail.urgent" = "Urgent";
+"detail.expected" = "Expected pomodoros: %d";
+"detail.expectedUnset" = "Expected pomodoros: unset";
+"detail.hasDue" = "Has due date";
+"detail.dueDate" = "Due date";
+"detail.cancel" = "Cancel";
+"detail.save" = "Save";
+"detail.emptyTitle" = "Title cannot be empty";
+"settings.timing" = "Timing";
+"settings.work" = "Work: %d min";
+"settings.shortRest" = "Short break: %d min";
+"settings.longRest" = "Long break: %d min";
+"settings.segments" = "Segments per round: %d";
+"settings.autoStart" = "Auto-start next segment";
+"settings.reminder" = "Reminders";
+"settings.sound" = "Play sound at segment end";
+"settings.soundHint" = "Notification permission is requested on first Start; if denied, only sound plays.";
+"settings.sync" = "Reminders Sync";
+"settings.syncState" = "Status: %@";
+"settings.syncNow" = "Sync Now";
+"settings.syncHint" = "Without permission, sync falls back to local only; tasks are never lost.";
+"settings.menuBar" = "Menu Bar";
+"settings.showInMenuBar" = "Show remaining time in menu bar";
+"settings.restoreDefaults" = "Restore Defaults";
+"settings.save" = "Save";
+"settings.saved" = "Saved";
+"onboarding.title" = "Three steps";
+"onboarding.step1" = "1. Pick a task";
+"onboarding.step2" = "2. Press Start";
+"onboarding.step3" = "3. After 25 min it breaks automatically";
+"onboarding.dismiss" = "Got it";
+
+"main.tab.tasks" = "Tasks";
+"main.tab.records" = "Records";
+"main.tab.settings" = "Settings";
+"detail.section.basic" = "Basics";
+"detail.section.status" = "Status";
+"detail.section.time" = "Time";
+"editor.start" = "Start time";
+"editor.duration" = "Duration: %d min";
+"editor.state" = "State";
+"editor.complete" = "Completed";
+"editor.skipped" = "Skipped";
+"editor.overlap" = "This overlaps an existing record. Press Save again to confirm.";
+"editor.save" = "Save";
+"editor.cancel" = "Cancel";
+
+"panel.segmentLine" = "Segment %1$d/%2$d · Stoic";
+"settings.syncing" = "Syncing…";
+"settings.syncResult" = "Exported %1$d · Updated %2$d · Imported %3$d";
+"quit.title" = "A timer was running when you quit";
+"quit.message" = "Continue the previous timer, or discard it and start over?";
+"quit.continue" = "Continue";
+"quit.discard" = "Discard";
+"notify.workEnd" = "Work segment finished";
+"notify.restEnd" = "Break finished";
+"notify.workBody" = "Stand up and take a sip of water";
+"notify.restBody" = "Back to the next segment";
+"tasks.newTitle" = "New Task";
+
+"panel.interrupted" = "Interrupted %d";
+"records.interruptions" = "Interruptions";
+
+"records.streak" = "Streak";
+
+"panel.reason.distraction" = "Distraction";
+"panel.reason.taskSwitch" = "Task switch";
+"panel.reason.rest" = "Chose to rest";
+"records.interruptionsBreakdown" = "%1$d distraction · %2$d switch · %3$d rest";
+
+"main.tab.review" = "Review";
+"review.focus" = "Focus this week";
+"review.pomodoros" = "Pomodoros";
+"review.activeDays" = "Active days";
+"review.interruptions" = "Interruptions";
+"review.peakHour" = "Peak hour";
+"review.topTasks" = "Top tasks";
+"review.change" = "vs last week";
+"review.empty" = "No records this week";
+"review.emptyHint" = "Finish some pomodoros and come back";
+"review.source" = "from %d records";
+"review.peakFormat" = "%d:00–%d:00";
+"review.flat" = "flat";
+"review.up" = "↑ %d%%";
+"review.down" = "↓ %d%%";
+
+"mode.pomodoro" = "Pomodoro 25";
+"mode.focus50" = "Focus 50";
+"mode.focus90" = "Focus 90";
+"records.focusBlocks" = "Focus blocks";
+
+"review.daily" = "Daily focus this week (min)";
+
+"settings.data" = "Data";
+"settings.exportJSON" = "Export JSON";
+"settings.exportCSV" = "Export CSV";
+"settings.dataHint" = "JSON contains tasks, records and settings; CSV contains records only.";
+
+"settings.blocking" = "Focus Blocking";
+"settings.blockedApps" = "Blocked apps (comma-separated bundle IDs)";
+"settings.addRunningApp" = "Add running app";
+"settings.blockingHint" = "Switching to a blocked app during a work segment triggers one reminder; it is not force-quit.";
+"notify.blockedTitle" = "Focus reminder";
+"notify.blockedBody" = "%@ is on your block list. Back to the timer.";
+
+"settings.blockingMode" = "Blocking mode";
+"mode.blocking.off" = "Off";
+"mode.blocking.blacklist" = "Block list (only listed)";
+"mode.blocking.whitelist" = "Allow list (only listed)";
+"settings.allowedApps" = "Allowed apps (comma-separated bundle IDs)";
+"notify.whitelistTitle" = "Focus reminder";
+"notify.whitelistBody" = "%@ is not on your focus allow list";
+
+"settings.about" = "About";
+"settings.version" = "Version";
+"settings.sponsorURL" = "Sponsor link (Afdian / BMAC)";
+"settings.support" = "Open sponsor page";
+"settings.supportHint" = "Point this to your own sponsor page; disabled while empty.";
+
+"settings.updateFeed" = "Update feed URL (JSON)";
+"settings.checkUpdates" = "Check for Updates";
+"settings.updateAvailable" = "Version %@ available; download page opened";
+"settings.upToDate" = "You are up to date";
+"settings.updateFailed" = "Check failed, try again later";
+"settings.updateHint" = "Lightweight update: checks version and opens the download page; does not replace the app.";
+
+"settings.privacy" = "Privacy";
+"settings.telemetry" = "Anonymous usage stats (off by default)";
+"settings.telemetryHint" = "Only aggregate counts like launches and completed pomodoros. No task names, notes, or identifiers. Nothing is recorded or sent while off.";
+
+"panel.completeTask" = "Complete current task";
+"panel.segmentDetail" = "%1$@ · Segment %2$d/%3$d";
+"panel.today" = "Today %1$d/%2$d";
+"panel.settings" = "Settings";
+
+"onboarding.hint" = "Pick a task, then press play";
+
+"menu.reports" = "Reports";
+"menu.exportCSV" = "Export to CSV";
+"menu.settings" = "Settings…";
+"menu.about" = "About Stoic";
+"settings.tab.general" = "General";
+"settings.tab.intervals" = "Intervals";
+"settings.tab.notifications" = "Notifications & Sounds";
+"settings.tab.blocking" = "Blocking";
+"settings.tab.data" = "Data";
+"settings.section.appearance" = "General";
+"settings.section.updates" = "Updates";
+
+"settings.alignToClock" = "Align to clock";
+
+"panel.newTask" = "New task…";
+
+"settings.soundPack" = "End-of-segment sound";
+"sound.classic" = "Woodblock + chime";
+"sound.soft" = "Soft tick";
+"sound.system" = "System sound";
+"sound.off" = "Off";
+"settings.alignToClockHint" = "Sizes the first work segment so work plus break ends on the next hour or half hour; realigns again after a long break.";

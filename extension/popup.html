@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 13px -apple-system, 'PingFang SC', sans-serif; width: 260px; padding: 14px; margin: 0; }
+  h1 { font-size: 14px; margin: 0 0 6px; }
+  p { color: #6e6e73; line-height: 1.6; margin: 0 0 10px; }
+  textarea { width: 100%; height: 80px; font: 12px monospace; border: 1px solid #e5e5ea; border-radius: 8px; padding: 8px; }
+  button { margin-top: 8px; background: #111; color: #fff; border: 0; border-radius: 8px; padding: 8px 12px; }
+</style>
+</head>
+<body>
+  <h1>知止 · 专注屏蔽</h1>
+  <p>每行一个域名，例如 weibo.com。保存后立即生效。</p>
+  <textarea id="hosts" placeholder="weibo.com&#10;bilibili.com"></textarea>
+  <button id="save">保存并生效</button>
+  <p id="status"></p>
+  <script src="popup.js"></script>
+</body>
+</html>

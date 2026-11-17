@@ -1,0 +1,96 @@
+name: Stoic
+options:
+  bundleIdPrefix: com.zhizhi
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+packages:
+  StoicCore:
+    path: .
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  Stoic:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/Stoic
+        excludes:
+          - Info.plist
+          - Stoic.entitlements
+      - path: Sources/Stoic/Assets
+    dependencies:
+      - package: StoicCore
+        product: StoicCore
+      - target: StoicWidget
+        embed: true
+    entitlements:
+      path: Sources/Stoic/Stoic.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.zhizhi.stoic
+    info:
+      path: Sources/Stoic/Info.plist
+      properties:
+        CFBundleDisplayName: 知止
+        CFBundleName: 知止
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        CFBundleIdentifier: com.zhizhi.stoic
+        LSUIElement: true
+        LSMinimumSystemVersion: "14.0"
+        NSHighResolutionCapable: true
+        NSRemindersFullAccessUsageDescription: 知止需要读取与写入提醒事项，以便把任务同步到系统提醒。
+        NSHumanReadableCopyright: © 2026 知止 Stoic
+        CFBundleIconFile: AppIcon
+        CFBundleURLTypes:
+          - CFBundleURLName: com.zhizhi.stoic
+            CFBundleURLSchemes:
+              - stoic
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhizhi.stoic
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: YES
+  StoicWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Sources/StoicWidget
+        excludes:
+          - Info.plist
+          - StoicWidget.entitlements
+    entitlements:
+      path: Sources/StoicWidget/StoicWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.zhizhi.stoic
+    info:
+      path: Sources/StoicWidget/Info.plist
+      properties:
+        CFBundleDisplayName: 知止
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhizhi.stoic.widget
+        SKIP_INSTALL: YES
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: YES
+schemes:
+  Stoic:
+    build:
+      targets:
+        Stoic: all
+    run:
+      config: Release
