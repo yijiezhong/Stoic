@@ -135,6 +135,8 @@ public final class SettingsRecord {
     public var playSound: Bool = true
     /// classic / soft / system / off
     public var soundPack: String = "classic"
+    /// 开机自动启动
+    public var launchAtLogin: Bool = true
     /// 工作段结束对齐到整点/半点
     public var alignToClock: Bool = true
     /// 逗号分隔的 bundle id，计时期间命中时提醒一次。

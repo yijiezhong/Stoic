@@ -199,3 +199,5 @@
 "sound.system" = "系统提示音";
 "sound.off" = "关闭";
 "settings.alignToClockHint" = "开始第一个番茄时按当前时间计算工作时长，让「工作 + 休息」正好在整点或半点结束，保证下一个番茄整点开始；长休息后同样重新对齐。";
+
+"settings.launchAtLogin" = "开机时自动启动";

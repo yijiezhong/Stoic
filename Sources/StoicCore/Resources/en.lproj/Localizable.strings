@@ -199,3 +199,5 @@
 "sound.system" = "System sound";
 "sound.off" = "Off";
 "settings.alignToClockHint" = "Sizes the first work segment so work plus break ends on the next hour or half hour; realigns again after a long break.";
+
+"settings.launchAtLogin" = "Launch at login";

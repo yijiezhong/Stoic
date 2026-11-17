@@ -87,6 +87,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         setupMainMenu()
+        let wantsLogin = UserDefaults.standard.object(forKey: "stoic.launchAtLogin") as? Bool ?? true
+        if wantsLogin != LaunchAtLogin.isEnabled {
+            _ = LaunchAtLogin.setEnabled(wantsLogin)
+        }
         DiagnosticsCollector.shared.start()
         setupShortcuts()
         applyStoredSettings()
@@ -342,6 +346,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         var config = TimerModel.Configuration()
         config.workDuration = TimeInterval(record.workMinutes * 60)
         config.alignToClock = record.alignToClock
+
         soundPack = record.soundPack
         config.shortRestDuration = TimeInterval(record.shortRestMinutes * 60)
         config.longRestDuration = TimeInterval(record.longRestMinutes * 60)
@@ -763,6 +768,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         shortcuts=\(shortcutStatus)
         taskWindow=\(taskWindow != nil)
         store=\(container != nil)
+        login=\(LaunchAtLogin.statusText)
         blocked=\(blockedIDs.count) mode=\(blockingMode)
         task=\(model.currentTaskTitle ?? "none")
         selected=\(model.selectedTaskTitle ?? "none")

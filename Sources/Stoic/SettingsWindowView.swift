@@ -16,6 +16,7 @@ struct SettingsWindowView: View {
     @State private var soundPack = "classic"
     @State private var alignToClock = true
     @State private var showInMenuBar = true
+    @AppStorage("stoic.launchAtLogin") private var launchAtLogin = true
     @State private var blockingMode = "off"
     @State private var blockedText = ""
     @AppStorage("stoic.telemetry.enabled") private var telemetryEnabled = false
@@ -65,6 +66,10 @@ struct SettingsWindowView: View {
     private var generalTab: some View {
         Form {
             Section(L10n.t("settings.section.appearance")) {
+                Toggle(L10n.t("settings.launchAtLogin"), isOn: $launchAtLogin)
+                    .onChange(of: launchAtLogin) { _, newValue in
+                        _ = LaunchAtLogin.setEnabled(newValue)
+                    }
                 Toggle(L10n.t("settings.showInMenuBar"), isOn: $showInMenuBar)
                 Toggle(L10n.t("settings.autoStart"), isOn: $autoStartNext)
             }
@@ -227,6 +232,7 @@ struct SettingsWindowView: View {
         record.soundPack = soundPack
         record.alignToClock = alignToClock
         record.showTimerInMenuBar = showInMenuBar
+        _ = LaunchAtLogin.setEnabled(launchAtLogin)
         record.blockedBundleIDs = blockedText
         record.blockingMode = blockingMode
         try? context.save()

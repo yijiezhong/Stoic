@@ -9,10 +9,11 @@ struct PanelView: View {
 
     /// 番茄红：工作段与短休统一使用；长休保留蓝色以做区分。
     private static let tomato = Color(red: 0.910, green: 0.298, blue: 0.239)
-    private static let longRestBlue = Color(red: 0.29, green: 0.56, blue: 0.89)
+    private static let restBlue = Color(red: 0.29, green: 0.56, blue: 0.89)
 
     private var accent: Color {
-        model.isLongRest ? Self.longRestBlue : Self.tomato
+        // 休息段（短休与长休）统一蓝色，工作段番茄红
+        model.kind == .rest ? Self.restBlue : Self.tomato
     }
 
     private var taskLabel: String {
