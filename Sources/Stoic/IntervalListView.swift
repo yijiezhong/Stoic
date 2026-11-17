@@ -7,6 +7,9 @@ struct IntervalListView: View {
     @Query(sort: [SortDescriptor(\Interval.startedAt, order: .reverse)])
     private var intervals: [Interval]
 
+    @Query(sort: [SortDescriptor(\TaskItem.createdAt)])
+    private var allTasks: [TaskItem]
+
     @State private var editingInterval: Interval?
 
     private var todayIntervals: [Interval] {
@@ -123,8 +126,19 @@ struct IntervalListView: View {
                 .foregroundStyle(interval.isRest ? Color.green : Color.orange)
                 .font(.system(size: 16))
 
-            Text(interval.task?.title ?? L10n.t("records.untitledTask"))
-                .lineLimit(1)
+            Menu {
+                Button(L10n.t("records.untitledTask")) { assign(interval, task: nil) }
+                Divider()
+                ForEach(allTasks) { task in
+                    Button(task.title) { assign(interval, task: task) }
+                }
+            } label: {
+                Text(interval.task?.title ?? L10n.t("records.untitledTask"))
+                    .lineLimit(1)
+                    .foregroundStyle(Color.black)
+            }
+            .menuStyle(.borderlessButton)
+            .fixedSize()
 
             Spacer()
 
@@ -141,6 +155,12 @@ struct IntervalListView: View {
         }
         .contentShape(Rectangle())
         .onTapGesture { editingInterval = interval }
+    }
+
+    private func assign(_ interval: Interval, task: TaskItem?) {
+        interval.task = task
+        try? context.save()
+        NotificationCenter.default.post(name: .stoicIntervalsChanged, object: nil)
     }
 
     private var footer: some View {

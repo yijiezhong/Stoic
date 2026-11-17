@@ -206,3 +206,5 @@
 "overlay.keepResting" = "继续休息";
 "settings.restOverlay" = "休息时显示全屏倒计时";
 "settings.restOverlayHint" = "会议中、演示中、微信交流时不弹出。";
+
+"editor.task" = "关联任务";

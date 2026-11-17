@@ -206,3 +206,5 @@
 "overlay.keepResting" = "Keep resting";
 "settings.restOverlay" = "Show full-screen countdown during breaks";
 "settings.restOverlayHint" = "Skipped during meetings, presentations, and WeChat conversations.";
+
+"editor.task" = "Task";

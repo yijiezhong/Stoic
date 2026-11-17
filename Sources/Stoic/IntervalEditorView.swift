@@ -7,10 +7,13 @@ struct IntervalEditorView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @Query private var allIntervals: [Interval]
+    @Query(sort: [SortDescriptor(\TaskItem.createdAt)])
+    private var allTasks: [TaskItem]
 
     @State private var start = Date()
     @State private var minutes = 25
     @State private var completionState = 3
+    @State private var selectedTaskID: UUID?
     @State private var warning: String?
     @State private var warningAcknowledged = false
 
@@ -23,6 +26,12 @@ struct IntervalEditorView: View {
                     displayedComponents: [.date, .hourAndMinute]
                 )
                 Stepper(L10n.format("editor.duration", minutes), value: $minutes, in: 1...180)
+                Picker(L10n.t("editor.task"), selection: $selectedTaskID) {
+                    Text(L10n.t("records.untitledTask")).tag(UUID?.none)
+                    ForEach(allTasks) { task in
+                        Text(task.title).tag(Optional(task.id))
+                    }
+                }
                 Picker(L10n.t("editor.state"), selection: $completionState) {
                     Text(L10n.t("editor.complete")).tag(3)
                     Text(L10n.t("editor.skipped")).tag(4)
@@ -43,11 +52,12 @@ struct IntervalEditorView: View {
             }
             .padding(12)
         }
-        .frame(width: 420, height: 320)
+        .frame(width: 420, height: 380)
         .onAppear {
             start = interval.startedAt
             minutes = max(1, Int((interval.duration / 60).rounded()))
             completionState = interval.completionState
+            selectedTaskID = interval.task?.id
         }
     }
 
@@ -67,6 +77,7 @@ struct IntervalEditorView: View {
         interval.startedAt = start
         interval.duration = duration
         interval.completionState = completionState
+        interval.task = allTasks.first { $0.id == selectedTaskID }
         try? context.save()
         NotificationCenter.default.post(name: .stoicIntervalsChanged, object: nil)
         dismiss()
