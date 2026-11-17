@@ -65,7 +65,7 @@ struct IntervalListView: View {
                 .font(.system(size: 16))
                 .foregroundStyle(Color.black)
             Text(value)
-                .font(.system(size: 24).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
             if let detail {
                 Text(detail)
                     .font(.system(size: 16))

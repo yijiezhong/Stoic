@@ -111,7 +111,7 @@ struct ReviewView: View {
                 .font(.system(size: 16))
                 .foregroundStyle(Color.black)
             Text(value)
-                .font(.system(size: 24).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
         }
     }
 
@@ -123,10 +123,10 @@ struct ReviewView: View {
                     .foregroundStyle(Color.black)
                 if let hour = review.peakHour {
                     Text(L10n.format("review.peakFormat", hour, hour + 1))
-                        .font(.system(size: 24).monospacedDigit())
+                        .font(.system(size: 16).monospacedDigit())
                 } else {
                     Text("—")
-                        .font(.system(size: 24))
+                        .font(.system(size: 16))
                 }
             }
 
@@ -135,7 +135,7 @@ struct ReviewView: View {
                     .font(.system(size: 16))
                     .foregroundStyle(Color.black)
                 Text(changeText)
-                    .font(.system(size: 24).monospacedDigit())
+                    .font(.system(size: 16).monospacedDigit())
             }
             Spacer()
         }

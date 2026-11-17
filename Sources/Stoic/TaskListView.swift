@@ -105,7 +105,7 @@ struct TaskListView: View {
             let done = task.intervals.filter { !$0.isRest && $0.completionState == 3 }.count
             if done > 0 {
                 Text("\(done)")
-                    .font(.caption.monospacedDigit())
+                    .font(.system(size: 16).monospacedDigit())
                     .foregroundStyle(Color.black)
             }
         }

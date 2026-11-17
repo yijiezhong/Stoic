@@ -72,8 +72,8 @@
 "onboarding.step3" = "3. After 25 min it breaks automatically";
 "onboarding.dismiss" = "Got it";
 
-"main.tab.tasks" = "Tasks";
-"main.tab.records" = "Records";
+"main.tab.tasks" = "Current Task";
+"main.tab.records" = "Today";
 "main.tab.settings" = "Settings";
 "detail.section.basic" = "Basics";
 "detail.section.status" = "Status";
@@ -110,7 +110,7 @@
 "panel.reason.rest" = "Chose to rest";
 "records.interruptionsBreakdown" = "%1$d distraction · %2$d switch · %3$d rest";
 
-"main.tab.review" = "Review";
+"main.tab.review" = "This Week";
 "review.focus" = "Focus this week";
 "review.pomodoros" = "Pomodoros";
 "review.activeDays" = "Active days";

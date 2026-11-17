@@ -72,8 +72,8 @@
 "onboarding.step3" = "③ 25 分钟后自动进入休息";
 "onboarding.dismiss" = "知道了";
 
-"main.tab.tasks" = "任务";
-"main.tab.records" = "记录";
+"main.tab.tasks" = "当前任务";
+"main.tab.records" = "今日记录";
 "main.tab.settings" = "设置";
 "detail.section.basic" = "基本信息";
 "detail.section.status" = "状态";
@@ -110,7 +110,7 @@
 "panel.reason.rest" = "主动休息";
 "records.interruptionsBreakdown" = "打扰 %1$d · 切任务 %2$d · 主动休息 %3$d";
 
-"main.tab.review" = "复盘";
+"main.tab.review" = "本周复盘";
 "review.focus" = "本周专注";
 "review.pomodoros" = "番茄数";
 "review.activeDays" = "活跃天数";
