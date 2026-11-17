@@ -7,11 +7,12 @@ struct PanelView: View {
     @Environment(\.modelContext) private var context
     @State private var todayCompleted = 0
 
+    /// 番茄红：工作段与短休统一使用；长休保留蓝色以做区分。
+    private static let tomato = Color(red: 0.910, green: 0.298, blue: 0.239)
+    private static let longRestBlue = Color(red: 0.29, green: 0.56, blue: 0.89)
+
     private var accent: Color {
-        if model.kind == .work { return Color(red: 0.91, green: 0.51, blue: 0.46) }
-        return model.isLongRest
-            ? Color(red: 0.29, green: 0.56, blue: 0.89)
-            : Color(red: 0.36, green: 0.72, blue: 0.47)
+        model.isLongRest ? Self.longRestBlue : Self.tomato
     }
 
     private var taskLabel: String {
@@ -115,7 +116,7 @@ struct PanelView: View {
 
             VStack(spacing: 10) {
                 Text(model.menuBarText)
-                    .font(.system(size: 46, weight: .bold, design: .rounded))
+                    .font(.system(size: 56, weight: .bold, design: .rounded))
                     .monospacedDigit()
                     .foregroundStyle(Color.black)
                 Button { model.toggle() } label: {
