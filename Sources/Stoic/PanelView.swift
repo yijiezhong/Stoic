@@ -115,7 +115,7 @@ struct PanelView: View {
 
             VStack(spacing: 10) {
                 Text(model.menuBarText)
-                    .font(.system(size: 24, weight: .light, design: .rounded))
+                    .font(.system(size: 46, weight: .bold, design: .rounded))
                     .monospacedDigit()
                     .foregroundStyle(Color.black)
                 Button { model.toggle() } label: {
@@ -130,7 +130,7 @@ struct PanelView: View {
                 .keyboardShortcut(.space, modifiers: [])
             }
         }
-        .frame(width: 196, height: 196)
+        .frame(width: 214, height: 214)
     }
 
     private var segmentLine: some View {
