@@ -39,8 +39,10 @@ struct SettingsWindowView: View {
         VStack(spacing: 0) {
             tabBar
             Divider()
-            settingsContent
-                .padding(14)
+            ScrollView {
+                settingsContent
+                    .padding(14)
+            }
 
             Divider()
             HStack {
@@ -56,7 +58,7 @@ struct SettingsWindowView: View {
         }
         .font(.system(size: 16))
         .foregroundStyle(Color.black)
-        .frame(width: 620, height: 480)
+        .frame(width: 620, height: 560)
         .onAppear {
             load()
             runningApps = NSWorkspace.shared.runningApplications
