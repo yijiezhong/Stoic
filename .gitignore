@@ -19,3 +19,6 @@ xcuserdata/
 *.pem
 *.p12
 *.cer
+
+# 内部文档（不公开）
+docs/

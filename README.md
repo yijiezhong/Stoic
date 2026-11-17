@@ -2,7 +2,7 @@
 
 会复盘的番茄钟（macOS 菜单栏应用）。
 
-![面板](<docs/screenshot-panel.png>)
+![面板](<assets/screenshot-panel.png>)
 
 - 菜单栏常驻，不占 Dock
 - 整点对齐：让每个番茄都在整点或半点开始
