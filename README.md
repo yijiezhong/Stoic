@@ -34,7 +34,7 @@ Sources/StoicCore/     状态机、数据模型、导入、导出、复盘、遥
 Sources/Stoic/         AppKit 壳：菜单栏、面板、任务窗口、诊断
 Tests/StoicCoreTests/  58 个单元测试
 scripts/               build-app / smoke / make-dmg / symbolicate
-docs/                  调研报告、Backlog、隐私政策、发布流程、官网页
+assets/                截图等仓库内素材
 extension/             Chrome MV3 扩展骨架（手动配置站点）
 ```
 
@@ -42,7 +42,7 @@ extension/             Chrome MV3 扩展骨架（手动配置站点）
 
 | 内容 | 路径 |
 |---|---|
-| 任务 / 记录 / 设置 | `~/Library/Application Support/default.store` |
+| 任务 / 记录 / 设置 | `~/Library/Group Containers/group.com.zhizhi.stoic/Library/Application Support/default.store` |
 | 计时运行态 | `UserDefaults`（`stoic.timer.snapshot`） |
 | 崩溃诊断 | `~/Library/Application Support/StoicLogs/` |
 
@@ -60,11 +60,7 @@ extension/             Chrome MV3 扩展骨架（手动配置站点）
 
 ## 文档
 
-- [Backlog（含执行日志）](<docs/Backlog-知止Stoic-合并版.md>)
-- [隐私政策](<docs/隐私政策.md>)
-- [发布流程](<docs/发布流程.md>)
-- [官网下载页](<docs/官网下载页.html>)
-- 竞品调研：[REA 版](<docs/竞品调研-BeFocusedPro.md>)、[Craft Anything 版](<docs/调研报告-CraftAnything-BeFocusedPro.md>)
+开发过程文档（Backlog、竞品调研、发布流程、隐私政策）保留在本地 `docs/` 目录，不随仓库发布。
 
 ## 版本号
 
