@@ -58,7 +58,7 @@ struct SettingsWindowView: View {
         }
         .font(.system(size: 16))
         .foregroundStyle(Color.black)
-        .frame(width: 620, height: 560)
+        .frame(width: 620, height: 700)
         .onAppear {
             load()
             runningApps = NSWorkspace.shared.runningApplications
