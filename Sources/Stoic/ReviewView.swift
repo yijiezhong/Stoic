@@ -45,7 +45,7 @@ struct ReviewView: View {
                         peakAndChange
                         topTasks
                         Text(L10n.format("review.source", review.sourceRecords))
-                            .font(.system(size: 14))
+                            .font(.system(size: 16))
                             .foregroundStyle(Color.black)
                     }
                     .padding(16)
@@ -108,10 +108,10 @@ struct ReviewView: View {
     private func metric(_ title: String, _ value: String) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title)
-                .font(.system(size: 14))
+                .font(.system(size: 16))
                 .foregroundStyle(Color.black)
             Text(value)
-                .font(.system(size: 14).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
         }
     }
 
@@ -119,23 +119,23 @@ struct ReviewView: View {
         HStack(spacing: 24) {
             VStack(alignment: .leading, spacing: 2) {
                 Text(L10n.t("review.peakHour"))
-                    .font(.system(size: 14))
+                    .font(.system(size: 16))
                     .foregroundStyle(Color.black)
                 if let hour = review.peakHour {
                     Text(L10n.format("review.peakFormat", hour, hour + 1))
-                        .font(.system(size: 14).monospacedDigit())
+                        .font(.system(size: 16).monospacedDigit())
                 } else {
                     Text("—")
-                        .font(.system(size: 14))
+                        .font(.system(size: 16))
                 }
             }
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(L10n.t("review.change"))
-                    .font(.system(size: 14))
+                    .font(.system(size: 16))
                     .foregroundStyle(Color.black)
                 Text(changeText)
-                    .font(.system(size: 14).monospacedDigit())
+                    .font(.system(size: 16).monospacedDigit())
             }
             Spacer()
         }
@@ -163,7 +163,7 @@ struct ReviewView: View {
                         .monospacedDigit()
                         .foregroundStyle(Color.black)
                 }
-                .font(.system(size: 14))
+                .font(.system(size: 16))
             }
         }
     }

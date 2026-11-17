@@ -65,13 +65,13 @@ struct IntervalListView: View {
     private func metric(_ title: String, _ value: String, detail: String? = nil) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title)
-                .font(.system(size: 14))
+                .font(.system(size: 16))
                 .foregroundStyle(Color.black)
             Text(value)
-                .font(.system(size: 14).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
             if let detail {
                 Text(detail)
-                    .font(.system(size: 14))
+                    .font(.system(size: 16))
                     .foregroundStyle(Color.black)
             }
         }
@@ -119,12 +119,12 @@ struct IntervalListView: View {
     private func row(_ interval: Interval) -> some View {
         HStack(spacing: 10) {
             Text(interval.startedAt, format: .dateTime.hour().minute())
-                .font(.system(size: 14).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
                 .foregroundStyle(Color.black)
 
             Image(systemName: interval.isRest ? "cup.and.saucer" : "timer")
                 .foregroundStyle(interval.isRest ? Color.green : Color.orange)
-                .font(.system(size: 14))
+                .font(.system(size: 16))
 
             if interval.isRest {
                 Text(L10n.t("records.rest"))
@@ -149,11 +149,11 @@ struct IntervalListView: View {
             Spacer()
 
             Text(format(interval.duration))
-                .font(.system(size: 14).monospacedDigit())
+                .font(.system(size: 16).monospacedDigit())
 
             if interval.completionState == 4 {
                 Text(L10n.t("records.skipped"))
-                    .font(.system(size: 14))
+                    .font(.system(size: 16))
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
                     .background(Color.secondary.opacity(0.15), in: Capsule())
@@ -172,7 +172,7 @@ struct IntervalListView: View {
     private var footer: some View {
         HStack {
             Text(L10n.t("records.editHint"))
-                .font(.system(size: 14))
+                .font(.system(size: 16))
                 .foregroundStyle(Color.black)
             Spacer()
             Button(L10n.t("records.edit")) {
